@@ -1,9 +1,12 @@
 # WordPress Dumps for Laradumps project
 
 ## How to use
-1. first install this package with composer
+1. first install this package with composer and define WP_ENVIRONMENT_TYPE as local
 ```bash
 composer require emanuellopes/wordpress-dumps --dev
+```
+```php
+define('WP_ENVIRONMENT_TYPE', 'local');
 ```
 
 2.  if you want to override the location of env file you can always use the filter

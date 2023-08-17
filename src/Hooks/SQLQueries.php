@@ -4,10 +4,7 @@ namespace WordpressDumps\WordpressDumps\Hooks;
 
 use LaraDumps\LaraDumpsCore\Concerns\Traceable;
 use LaraDumps\LaraDumpsCore\Contracts\TraceableContract;
-use LaraDumps\LaraDumpsCore\LaraDumps;
-use Ramsey\Uuid\Uuid;
 use WordpressDumps\WordpressDumps\Payloads\QueriesPayload;
-use WordpressDumps\WordpressDumps\WordpressDumps;
 
 class SQLQueries implements TraceableContract
 {
@@ -65,7 +62,7 @@ class SQLQueries implements TraceableContract
         float $queryTime,
     ): array {
         $payload = new QueriesPayload($query, $queryTime, $this->trace);
-        ds($payload)->label('a');
+        ds()->send($payload);
         return $queryData;
     }
 

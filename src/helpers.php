@@ -11,7 +11,7 @@ if (!function_exists('appBasePath')) {
 }
 
 if (!function_exists('ds')) {
-    function ds(mixed ...$args)
+    function ds(mixed ...$args): WordpressDumps
     {
         $stack = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS | DEBUG_BACKTRACE_PROVIDE_OBJECT)[0];
 
