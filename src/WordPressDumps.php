@@ -3,6 +3,7 @@
 namespace WordpressDumps\WordpressDumps;
 
 use LaraDumps\LaraDumpsCore\LaraDumps;
+use LaraDumps\LaraDumpsCore\Payloads\Payload;
 use WordpressDumps\WordpressDumps\Hooks\SQLQueries;
 
 class WordpressDumps extends LaraDumps
@@ -28,5 +29,21 @@ class WordpressDumps extends LaraDumps
     {
         $this->sqlQueries->disable();
         return $this;
+    }
+
+    public function getLastQuery(): WordpressDumps
+    {
+        $this->sqlQueries->getLastQuery();
+        return $this;
+    }
+
+    public function send(Payload $payload): Payload
+    {
+        if(wp_get_environment_type() !== 'local')
+        {
+            return $payload;
+        }
+
+        return parent::send($payload);
     }
 }
