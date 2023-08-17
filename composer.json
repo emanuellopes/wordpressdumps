@@ -3,6 +3,7 @@
     "description": "WordPress Package for laradumps",
 	"version": "1.0.0",
     "type": "library",
+	"license": "MIT",
     "autoload": {
         "psr-4": {
             "WordpressDumps\\WordpressDumps\\": "src/"
