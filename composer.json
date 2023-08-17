@@ -1,6 +1,7 @@
 {
     "name": "emanuellopes/wordpress-dumps",
     "description": "WordPress Package for laradumps",
+	"version": "1.0.0",
     "type": "library",
     "autoload": {
         "psr-4": {
