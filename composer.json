@@ -7,7 +7,7 @@
             "WordpressDumps\\WordpressDumps\\": "src/"
         },
         "files": [
-            "src/functions.php"
+            "src/helpers.php"
         ]
     },
     "autoload-dev": {
@@ -15,6 +15,15 @@
             "WordpressDumps\\WordpressDumps\\Tests\\" : "tests"
         }
     },
+    "repositories": [
+        {
+            "url": "https://github.com/emanuellopes/laradumps-core.git",
+            "type": "git",
+			"only": [
+				"laradumps/laradumps-core"
+			]
+        }
+    ],
     "authors": [
         {
             "name": "Emanuel Lopes",
@@ -23,7 +32,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "laradumps/laradumps-core": "^0.3.0"
+        "laradumps/laradumps-core": "dev-feat/add-wordpress-dumps"
     },
     "scripts": {
         "test:pint": "./vendor/bin/pint --test",
@@ -45,5 +54,12 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "archive": {
+        "exclude": [
+            "/_dev/*",
+            "sample-theme",
+            "tests"
+        ]
     }
 }
